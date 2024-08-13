@@ -1,5 +1,4 @@
 /*
-
 A Parser for PHP written in Go
 
 Package usage example:
@@ -10,11 +9,11 @@ Package usage example:
 		"log"
 		"os"
 
-		"github.com/VKCOM/php-parser/pkg/conf"
-		"github.com/VKCOM/php-parser/pkg/errors"
-		"github.com/VKCOM/php-parser/pkg/parser"
-		"github.com/VKCOM/php-parser/pkg/version"
-		"github.com/VKCOM/php-parser/pkg/visitor/dumper"
+		"github.com/dkoston/php-parser/pkg/conf"
+		"github.com/dkoston/php-parser/pkg/errors"
+		"github.com/dkoston/php-parser/pkg/parser"
+		"github.com/dkoston/php-parser/pkg/version"
+		"github.com/dkoston/php-parser/pkg/visitor/dumper"
 	)
 
 	func main() {

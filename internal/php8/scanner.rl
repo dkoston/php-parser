@@ -5,10 +5,10 @@ import (
     "strconv"
     "strings"
 
-    "github.com/VKCOM/php-parser/pkg/token"
+    "github.com/dkoston/php-parser/pkg/token"
 )
 
-%%{ 
+%%{
     machine lexer;
     write data;
     access lex.;
@@ -31,7 +31,7 @@ func (lex *Lexer) Lex() *token.Token {
 
     _, _ = lblStart, lblEnd
 
-    %%{ 
+    %%{
         action heredoc_lbl_start {lblStart = lex.p}
         action heredoc_lbl_end   {lblEnd = lex.p}
 

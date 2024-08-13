@@ -3,10 +3,10 @@ package tester
 import (
 	"testing"
 
-	"github.com/VKCOM/php-parser/internal/php8"
-	"github.com/VKCOM/php-parser/internal/scanner"
-	"github.com/VKCOM/php-parser/pkg/conf"
-	"github.com/VKCOM/php-parser/pkg/version"
+	"github.com/dkoston/php-parser/internal/php8"
+	"github.com/dkoston/php-parser/internal/scanner"
+	"github.com/dkoston/php-parser/pkg/conf"
+	"github.com/dkoston/php-parser/pkg/version"
 	"gotest.tools/assert"
 )
 

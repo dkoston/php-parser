@@ -1,12 +1,12 @@
 package php5
 
 import (
-	"github.com/VKCOM/php-parser/internal/position"
-	"github.com/VKCOM/php-parser/internal/scanner"
-	"github.com/VKCOM/php-parser/pkg/ast"
-	"github.com/VKCOM/php-parser/pkg/conf"
-	"github.com/VKCOM/php-parser/pkg/errors"
-	"github.com/VKCOM/php-parser/pkg/token"
+	"github.com/dkoston/php-parser/internal/position"
+	"github.com/dkoston/php-parser/internal/scanner"
+	"github.com/dkoston/php-parser/pkg/ast"
+	"github.com/dkoston/php-parser/pkg/conf"
+	"github.com/dkoston/php-parser/pkg/errors"
+	"github.com/dkoston/php-parser/pkg/token"
 )
 
 // Parser structure

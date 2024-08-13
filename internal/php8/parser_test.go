@@ -3,15 +3,15 @@ package php8_test
 import (
 	"testing"
 
-	"github.com/VKCOM/php-parser/internal/php8"
+	"github.com/dkoston/php-parser/internal/php8"
 	"gotest.tools/assert"
 
-	"github.com/VKCOM/php-parser/pkg/ast"
-	"github.com/VKCOM/php-parser/pkg/conf"
-	"github.com/VKCOM/php-parser/pkg/errors"
-	"github.com/VKCOM/php-parser/pkg/position"
-	"github.com/VKCOM/php-parser/pkg/token"
-	"github.com/VKCOM/php-parser/pkg/version"
+	"github.com/dkoston/php-parser/pkg/ast"
+	"github.com/dkoston/php-parser/pkg/conf"
+	"github.com/dkoston/php-parser/pkg/errors"
+	"github.com/dkoston/php-parser/pkg/position"
+	"github.com/dkoston/php-parser/pkg/token"
+	"github.com/dkoston/php-parser/pkg/version"
 )
 
 func TestIdentifier(t *testing.T) {

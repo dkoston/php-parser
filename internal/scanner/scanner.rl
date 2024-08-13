@@ -5,10 +5,10 @@ import (
     "strconv"
     "strings"
 
-    "github.com/VKCOM/php-parser/pkg/token"
+    "github.com/dkoston/php-parser/pkg/token"
 )
 
-%%{ 
+%%{
     machine lexer;
     write data;
     access lex.;
@@ -31,7 +31,7 @@ func (lex *Lexer) Lex() *token.Token {
 
     _, _ = lblStart, lblEnd
 
-    %%{ 
+    %%{
         action heredoc_lbl_start {lblStart = lex.p}
         action heredoc_lbl_end   {lblEnd = lex.p}
 
@@ -67,7 +67,7 @@ func (lex *Lexer) Lex() *token.Token {
         varname       = varname_first (varname_second)*;
         heredoc_label = varname >heredoc_lbl_start %heredoc_lbl_end;
         operators     = ';'|':'|','|'.'|'['|']'|'('|')'|'|'|'/'|'^'|'&'|'+'|'-'|'*'|'='|'%'|'!'|'~'|'$'|'<'|'>'|'?'|'@';
-        
+
         prepush { lex.growCallStack(); }
 
         constant_string =
@@ -169,8 +169,8 @@ func (lex *Lexer) Lex() *token.Token {
 
                 if err == nil {
                     lex.setTokenPosition(tkn); tok = token.T_LNUMBER; fbreak;
-                } 
-                
+                }
+
                 lex.setTokenPosition(tkn); tok = token.T_DNUMBER; fbreak;
             };
             lnum => {
@@ -184,8 +184,8 @@ func (lex *Lexer) Lex() *token.Token {
 
                 if err == nil {
                     lex.setTokenPosition(tkn); tok = token.T_LNUMBER; fbreak;
-                } 
-                
+                }
+
                 lex.setTokenPosition(tkn); tok = token.T_DNUMBER; fbreak;
             };
             hnum => {
@@ -194,8 +194,8 @@ func (lex *Lexer) Lex() *token.Token {
 
                 if err == nil {
                     lex.setTokenPosition(tkn); tok = token.T_LNUMBER; fbreak;
-                } 
-                
+                }
+
                 lex.setTokenPosition(tkn); tok = token.T_DNUMBER; fbreak;
             };
 
@@ -390,7 +390,7 @@ func (lex *Lexer) Lex() *token.Token {
                 fbreak;
             };
         *|;
-        
+
         heredoc := |*
             "{$" => {lex.ungetCnt(1); lex.setTokenPosition(tkn); tok = token.T_CURLY_OPEN; lex.call(ftargs, fentry(php)); goto _out;};
             "${" => {lex.setTokenPosition(tkn); tok = token.T_DOLLAR_OPEN_CURLY_BRACES; lex.call(ftargs, fentry(string_var_name)); goto _out;};
@@ -405,7 +405,7 @@ func (lex *Lexer) Lex() *token.Token {
                 fbreak;
             };
         *|;
-        
+
         backqote := |*
             "{$"              => {lex.ungetCnt(1); lex.setTokenPosition(tkn); tok = token.T_CURLY_OPEN; lex.call(ftargs, fentry(php)); goto _out;};
             "${"              => {lex.setTokenPosition(tkn); tok = token.T_DOLLAR_OPEN_CURLY_BRACES; lex.call(ftargs, fentry(string_var_name)); goto _out;};
@@ -417,7 +417,7 @@ func (lex *Lexer) Lex() *token.Token {
                 fbreak;
             };
         *|;
-        
+
         template_string := |*
             "{$"               => {lex.ungetCnt(1); lex.setTokenPosition(tkn); tok = token.T_CURLY_OPEN; lex.call(ftargs, fentry(php)); goto _out;};
             "${"               => {lex.setTokenPosition(tkn); tok = token.T_DOLLAR_OPEN_CURLY_BRACES; lex.call(ftargs, fentry(string_var_name)); goto _out;};
@@ -444,7 +444,7 @@ func (lex *Lexer) Lex() *token.Token {
                 fbreak;
             };
         *|;
-        
+
         string_var := |*
             '$' varname        => {lex.setTokenPosition(tkn); tok = token.T_VARIABLE; fbreak;};
             '->' varname_first => {lex.ungetCnt(1); lex.setTokenPosition(tkn); tok = token.T_OBJECT_OPERATOR; fbreak;};
@@ -452,7 +452,7 @@ func (lex *Lexer) Lex() *token.Token {
             '['                => {lex.setTokenPosition(tkn); tok = token.ID(int('[')); lex.call(ftargs, fentry(string_var_index)); goto _out;};
             any                => {lex.ungetCnt(1); fret;};
         *|;
-        
+
         string_var_index := |*
             lnum | hnum | bnum       => {lex.setTokenPosition(tkn); tok = token.T_NUM_STRING; fbreak;};
             '$' varname              => {lex.setTokenPosition(tkn); tok = token.T_VARIABLE; fbreak;};

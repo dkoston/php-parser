@@ -3,14 +3,14 @@ package php8_test
 import (
 	"testing"
 
-	"github.com/VKCOM/php-parser/internal/tester"
-	"github.com/VKCOM/php-parser/pkg/ast"
-	"github.com/VKCOM/php-parser/pkg/conf"
-	"github.com/VKCOM/php-parser/pkg/errors"
-	"github.com/VKCOM/php-parser/pkg/parser"
-	"github.com/VKCOM/php-parser/pkg/position"
-	"github.com/VKCOM/php-parser/pkg/token"
-	"github.com/VKCOM/php-parser/pkg/version"
+	"github.com/dkoston/php-parser/internal/tester"
+	"github.com/dkoston/php-parser/pkg/ast"
+	"github.com/dkoston/php-parser/pkg/conf"
+	"github.com/dkoston/php-parser/pkg/errors"
+	"github.com/dkoston/php-parser/pkg/parser"
+	"github.com/dkoston/php-parser/pkg/position"
+	"github.com/dkoston/php-parser/pkg/token"
+	"github.com/dkoston/php-parser/pkg/version"
 	"gotest.tools/assert"
 )
 
@@ -4177,7 +4177,7 @@ class Point {
 								},
 							},
 							AmpersandTkn: &token.Token{
-								ID: token.ID(57492),
+								ID: token.T_AMPERSAND_FOLLOWED_BY_VAR_OR_VARARG,
 								Val: []byte("&"),
 								FreeFloating: []*token.Token{
 									{
@@ -4302,7 +4302,7 @@ class Point {
 								},
 							},
 							AmpersandTkn: &token.Token{
-								ID: token.ID(57492),
+								ID: token.T_AMPERSAND_FOLLOWED_BY_VAR_OR_VARARG,
 								Val: []byte("&"),
 								FreeFloating: []*token.Token{
 									{

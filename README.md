@@ -1,4 +1,4 @@
-> This is a fork of the [z7zmey](https://github.com/z7zmey) [parser](https://github.com/z7zmey/php-parser) that adds PHP 8 support.
+> This is a fork of the [z7zmey](https://github.com/VKCOM) [parser](https://github.com/VKCOM/php-parser) which is no longer maintained.
 
 PHP Parser written in Go
 ========================
@@ -21,12 +21,6 @@ Features
 - Parsing syntax-invalid PHP files
 - Saving and printing free-floating comments and whitespaces
 
-Who Uses
---------
-
-- [VKCOM/noverify](https://github.com/VKCOM/noverify) — pretty fast linter for PHP
-- [VKCOM/nocolor](https://github.com/VKCOM/nocolor) — architecture validation tool for PHP based on the [*concept of colored functions*](https://github.com/VKCOM/nocolor/blob/master/docs/introducing_colors.md)
-- [quasilyte/phpgrep](https://github.com/quasilyte/phpgrep) — tool for syntax-aware PHP code search
 
 Usage example
 -------
@@ -38,11 +32,11 @@ import (
 	"log"
 	"os"
 
-	"github.com/VKCOM/php-parser/pkg/conf"
-	"github.com/VKCOM/php-parser/pkg/errors"
-	"github.com/VKCOM/php-parser/pkg/parser"
-	"github.com/VKCOM/php-parser/pkg/version"
-	"github.com/VKCOM/php-parser/pkg/visitor/dumper"
+	"github.com/dkoston/php-parser/pkg/conf"
+	"github.com/dkoston/php-parser/pkg/errors"
+	"github.com/dkoston/php-parser/pkg/parser"
+	"github.com/dkoston/php-parser/pkg/version"
+	"github.com/dkoston/php-parser/pkg/visitor/dumper"
 )
 
 func main() {
@@ -87,7 +81,7 @@ Install
 -------
 
 ```
-go get github.com/VKCOM/php-parser/cmd/php-parser
+go get github.com/dkoston/php-parser/cmd/php-parser
 ```
 
 CLI

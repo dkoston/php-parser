@@ -1,8 +1,8 @@
 package ast
 
 import (
-	"github.com/VKCOM/php-parser/pkg/position"
-	"github.com/VKCOM/php-parser/pkg/token"
+	"github.com/dkoston/php-parser/pkg/position"
+	"github.com/dkoston/php-parser/pkg/token"
 )
 
 // Root node

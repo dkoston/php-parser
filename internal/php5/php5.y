@@ -4,9 +4,9 @@ package php5
 import (
     "strconv"
 
-    "github.com/VKCOM/php-parser/pkg/ast"
-    "github.com/VKCOM/php-parser/pkg/errors"
-    "github.com/VKCOM/php-parser/pkg/token"
+    "github.com/dkoston/php-parser/pkg/ast"
+    "github.com/dkoston/php-parser/pkg/errors"
+    "github.com/dkoston/php-parser/pkg/token"
 )
 
 %}
@@ -194,7 +194,7 @@ import (
 %left '=' T_PLUS_EQUAL T_MINUS_EQUAL T_MUL_EQUAL T_DIV_EQUAL T_CONCAT_EQUAL T_MOD_EQUAL T_AND_EQUAL T_OR_EQUAL T_XOR_EQUAL T_SL_EQUAL T_SR_EQUAL T_POW_EQUAL
 %left '?' ':'
 %left T_BOOLEAN_OR
-%left T_BOOLEAN_AND 
+%left T_BOOLEAN_AND
 %left '|'
 %left '^'
 %left '&'
@@ -210,8 +210,8 @@ import (
 %right '['
 %nonassoc T_NEW T_CLONE
 %left T_ELSEIF
-%left T_ELSE 
-%left T_ENDIF 
+%left T_ELSE
+%left T_ENDIF
 %right T_STATIC T_ABSTRACT T_FINAL T_PRIVATE T_PROTECTED T_PUBLIC
 
 %type <token> function interface_entry
@@ -3440,7 +3440,7 @@ expr_without_variable:
     |   T_STATIC function is_reference '(' parameter_list ')' lexical_vars '{' inner_statement_list '}'
             {
                 closure := $7.(*ast.ExprClosure)
-                
+
                 closure.Position             = yylex.(*Parser).builder.NewTokensPosition($1, $10)
                 closure.StaticTkn            = $1
                 closure.FunctionTkn          = $2

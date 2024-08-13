@@ -11,9 +11,9 @@ import __yyfmt__ "fmt"
 import (
 	"strconv"
 
-	"github.com/VKCOM/php-parser/pkg/ast"
-	"github.com/VKCOM/php-parser/pkg/errors"
-	"github.com/VKCOM/php-parser/pkg/token"
+	"github.com/dkoston/php-parser/pkg/ast"
+	"github.com/dkoston/php-parser/pkg/errors"
+	"github.com/dkoston/php-parser/pkg/token"
 )
 
 // line internal/php5/php5.y:14
